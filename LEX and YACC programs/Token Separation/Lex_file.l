@@ -22,9 +22,9 @@ int|main|float|printf|return printf("%s is a keyword\n",yytext);
 \) printf("%s is a close bracket\n",yytext);
 {ws};
 %%
-int main(int argc,char* argv[]){
+int main(int argc,char *argv[]){
 FILE *fp;
-fp=fopen(argv[1],"r");
+fp=fopen("input.txt","r");
 if(fp==NULL) printf("no file exists");
 else {
 yyin=fp;
