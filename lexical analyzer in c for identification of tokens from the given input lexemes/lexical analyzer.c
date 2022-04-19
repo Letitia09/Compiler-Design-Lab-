@@ -62,10 +62,10 @@ bool isInteger(char* str)
 	if (len == 0)
 		return (false);
 	for (i = 0; i < len; i++) {
-		if (str[i] != '0' && str[i] != '1' && str[i] != '2'
+		if ((str[i] != '0' && str[i] != '1' && str[i] != '2'
 			&& str[i] != '3' && str[i] != '4' && str[i] != '5'
 			&& str[i] != '6' && str[i] != '7' && str[i] != '8'
-			&& str[i] != '9' || (str[i] == '-' && i > 0))
+			&& str[i] != '9' )|| (str[i] == '-' && i > 0))
 			return (false);
 	}
 	return (true);
@@ -97,11 +97,11 @@ void parse(char* str)
 
 		if (isDelimiter(str[right]) == true && left == right) {
 			if (isOperator(str[right]) == true)
-				printf("Valid operator : %c", str[right]);
+				printf("Valid operator: %c", str[right]);
 
 			right++;
 			left = right;
-		} else if (isDelimiter(str[right]) == true && left != right
+		} else if ((isDelimiter(str[right]) == true && left != right)
 				|| (right == len && left != right)) {
 			char* subStr = subString(str, left, right - 1);
 
