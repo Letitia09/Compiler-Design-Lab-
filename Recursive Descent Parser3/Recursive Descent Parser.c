@@ -1,3 +1,11 @@
+/*
+S->(E)|b
+E->SE'
+E'->,SE'|^
+
+....production rules
+*/
+
 #include <stdio.h>
 #include <string.h>
 int i = 0, f = 0;
